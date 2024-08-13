@@ -1,0 +1,41 @@
+API
+-API GET ข้อมูลรายงานทั้งหมด : http://localhost:3000/api/report/reports
+-API GET ข้อมูลรายงานเฉพาะอัน : http://localhost:3000/api/report/report/:id
+-API POST เพิ่มรายงานใหม่ : http://localhost:3000/api/report/report
+-API PUT แก้ไขรายงาน : http://localhost:3000/api/report/report_edit/:id
+-API PUT อัพเดตสถานะรายงาน : http://localhost:3000/api/report/report_update/:id
+-API DELETE ลบรายงาน : http://localhost:3000/api/report/report
+-API POST ลงทะเบียนผู้ใช้ : http://localhost:3000/api/auth/register
+-API POST เข้าสู่ระบบ : http://localhost:3000/api/auth/login
+-API POST refresh : http://localhost:3000/api/auth/refresh
+
+ROUTES
+-auth
+-report
+
+MODELS
+-report
+-user
+
+req Tables
+-Report
+-UserActivation_2
+
+TEST -
+POST เพิ่มรายงานใหม่ : http://localhost:3000/api/report/report
+{
+    "title": "Plumbing",
+    "detail": "Leaking water pipe",
+    "location": "sc1111",
+    "status": "Waiting for action"
+}
+PUT แก้ไขรายงาน : http://localhost:3000/api/report/report_edit/:id
+{
+    "title": "Plumbing",
+    "detail": "The water doesn't flow",
+    "location": "sc1112"
+}
+PUT อัพเดตสถานะรายงาน : http://localhost:3000/api/report/report_update/:id
+{
+    "status": "Completed"
+}
